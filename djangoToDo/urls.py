@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from todo_drf import views, serializers
+from todo_drf.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todo_drf.urls')),
     path('register', views.UserCreate.as_view()),
+    path('login', login),
 ]
